@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import './../App.css';
 
+import {Root} from "./Root";
+import {Home} from "./Home";
+
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        content goes here
-      </div>
+      <Root>
+        <Home></Home>
+      </Root>
     );
   }
 }

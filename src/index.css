@@ -5,3 +5,15 @@ body {
   background-color: #2b2b2b;
   color: white;
 }
+
+a:visited {
+  color: #cc99ff;
+}
+
+a:link {
+  color: #99ccff;
+}
+
+a:active {
+  color: #ffcccc;
+}
