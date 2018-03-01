@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './../App.css';
-import {Router, Route, browserHistory} from "react-router";
+import {Router, Route, browserHistory, IndexRoute} from "react-router";
 
 import {Home} from "./Home";
 import {User} from "./User";
@@ -12,6 +12,9 @@ class App extends Component {
       <Router history={browserHistory}>
         {/* problem #1: no default path, loading url root "/" doesn't show Header */}
         <Route path={"/"} component={Root} >
+
+          {/* solution to p#1 */}
+          <IndexRoute component={Home} />
 
           {/* works: loading url path "/user" or "/home" shows Header AND child component */}
           <Route path={"user"} component={User}/>
