@@ -4,13 +4,26 @@ import {Router, Route, browserHistory} from "react-router";
 
 import {Home} from "./Home";
 import {User} from "./User";
+import {Root} from "./Root";
 
 class App extends Component {
   render() {
     return (
       <Router history={browserHistory}>
-        <Route path={"user"} component={User} />
-        <Route path={"home"} component={Home} />
+        {/* problem #1: no default path, loading url root "/" doesn't show Header */}
+        <Route path={"/"} component={Root} >
+
+          {/* works: loading url path "/user" or "/home" shows Header AND child component */}
+          <Route path={"user"} component={User}/>
+          <Route path={"home"} component={Home}/>
+        </Route>
+
+        {/* ordering does matter, will not arrive here, since already captured above */}
+        <Route path={"home"} component={Home}/>
+
+        {/* alternatively the following WON'T use the Root component */}
+        <Route path={"home-single"} component={Home}/>
+
       </Router>
     );
   }
