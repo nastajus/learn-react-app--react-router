@@ -17,3 +17,10 @@ a:link {
 a:active {
   color: #ffcccc;
 }
+
+button {
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#d3d7cf), to(#aaaaaa));
+  /*background: -webkit-linear-gradient(0% 0%, 0% 100%, from(#d3d7cf), to(#aaaaaa));*/
+  /*background: -moz-linear-gradient(center top, #d3d7cf, #aaaaaa);*/
+
+}
